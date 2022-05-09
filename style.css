@@ -1,0 +1,248 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	transform: .2s;
+	font-weight: 400;
+	font-size: 12px;
+	background-color: rgba(230, 255, 255, 0.91);
+}
+.conteiner{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	height: 100%;
+	margin: 20px auto;
+	width: 1070px;
+	background-color: rgba(28, 54, 46, 0.747);
+	padding-bottom: 20px;
+	border-radius: .5rem;
+	border: 0px solid black;
+	box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.788),
+						2px 4px 4px 0 rgba(0, 0, 0, 0.788);
+}
+.text{
+	padding-left: 10px;
+	max-width: 1028px;
+	width: 100%;
+	margin: 20px 0;
+	height: 220px;
+	border-radius: 8px;
+	outline: none;
+	border: 2px inset rgba(7, 7, 7, 0.737);
+	color: black;
+	font-size: 16px;
+	background-image: linear-gradient(45deg, rgb(255, 255, 255), rgba(10, 10, 10, 0.39));
+	box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.788),
+					inset -2px -2px 5px #fff;
+}
+.keyboard__wrapper{
+	max-width: 1028px;
+	width: 100%;
+	background-color: rgba(42, 50, 50, 0.91);
+	overflow: hidden;
+	position: relative;
+	margin: 0 auto;
+	padding: 5px;
+	border: 4px solid rgba(0, 0, 0, 0.294);
+	border-radius: .5rem;
+	box-shadow:0px 0px 20px 0px rgba(0, 0, 0, 0.468);
+	transition: .2s;
+}
+.row{
+	display: flex;
+}
+.keys{
+	position: relative;
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.689),
+					inset 1px 1px 4px rgba(70, 70, 70, 0.689);;
+	color: rgb(197, 196, 196);
+	width: 60px;
+	height: 60px;
+	margin: 4px;
+	background-color: rgb(0, 0, 0);
+	border-radius: 8%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: .2s;
+	font-size: 14px;
+	cursor: pointer;
+	border: 1px solid transparent;
+	transition: .2s;
+}
+.del{
+	position: relative;
+	width: 60px;
+	height: 20px;
+	background-color: rgb(228, 228, 228);
+	margin-bottom: 10px;
+	border-radius: .5rem;
+	margin-left: 950px;
+	position: relative;
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.689),
+					inset 1px 1px 4px rgba(70, 70, 70, 0.689);;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: .2s;
+	font-size: 14px;
+	cursor: pointer;
+	border: 1px solid transparent;
+	transition: .2s;
+	color: black;
+	margin-top: -10px;
+	font-weight: 700;
+	display: none;
+}
+
+.keys:active{
+	background-color: rgb(255, 255, 255);
+	color: rgb(39, 39, 39);
+	top: .5px;
+	box-shadow: inset 2px 2px 4px black;
+}
+.keys:hover{
+	border-color: rgb(157, 157, 157);
+}
+.active{
+	background-color: rgb(235, 235, 235);
+	color: rgb(39, 39, 39);
+	top: .5px;
+	box-shadow: inset 2px 2px 4px black;
+	box-sizing: none;
+}
+.active_caps{
+	background-color: rgb(235, 235, 235);
+	color: rgb(39, 39, 39);
+	top: .5px;
+	box-shadow: inset 2px 2px 4px black;
+}
+.active_caps::before{
+	content: '';
+	position: absolute;
+	width: 7px;
+	height: 7px;
+	background-color: rgb(28, 158, 158);
+	top: 5px;
+	right:5px;
+	border-radius: 50%;
+	box-shadow: 1px 1px 4px aqua;
+
+}
+.stroke{
+	text-align: center;
+	margin: 0 auto;
+	height: 90px;
+	padding-top: 15px;
+	font-size: 20px;
+	font-weight: 400;
+	background-color: rgba(28, 54, 46, 0.747);
+	width: 800px;
+	border: 2px solid rgba(0, 0, 0, 0.496);
+	box-shadow:4px 4px 10px rgb(0, 0, 0);
+	border-radius: 40px 40px 40px 0;
+	background-image: linear-gradient(45deg, rgba(93, 132, 123, 0.718), rgba(28, 54, 46, 0.747));
+	color: white;
+}
+
+.up_active{
+	background-color: rgb(235, 235, 235);
+	color: rgb(39, 39, 39);
+	top: .5px;
+	box-shadow: inset 2px 2px 4px black;
+	box-sizing: none;
+	margin: 4px;
+	width: 60px;
+	height: 28px;
+}
+.up_down{
+	color: white;
+	display: flex;
+	justify-content: center;
+	font-size: 12px;
+	align-items: center;
+	background-color: black;
+	margin: 4px;
+	width: 60px;
+	height: 28px;
+	box-shadow: 1px 1px 4px black;
+}
+.en{
+	position: absolute;
+	top: 12px;
+	left: 12px;
+	font-size: 16px;
+	display: inline-flex;
+}
+
+.ru{
+display: none;
+}
+.num{
+	position: absolute;
+	bottom: 8px;
+	left: 8px;
+	font-size: 18px;
+}
+.symbol{
+	position: absolute;
+	top: 8px;
+	left: 8px;
+	font-size: 14px;
+}
+.first_key{
+	width: 45px;
+}
+.backspace_key{
+	width: 135px;
+}
+.tab_key{
+	width: 90px;
+}
+.slash_key{
+	width: 90px;
+}
+.capslock_key{
+	position: relative;
+	width: 100px;
+}
+.enter_key{
+	width: 145px;
+	justify-content: end;
+	padding-right: 24px;
+}
+.shift_left{
+	width: 128px;
+	justify-content: start;
+	padding-left: 24px;
+}
+.shift_right{
+	width: 184px;
+	justify-content: end;
+	padding-right: 24px;
+
+}
+.space_key{
+	border-radius: 4px;
+	width: 388px;
+}
+
+.remove{
+	animation: keys_animation 0.5s forwards;
+}
+@keyframes keys_animation {
+	0%{
+		background-color: white;
+		color: black;
+	}
+	100%{
+		background-color: black;
+		color: rgb(197, 196, 196);
+		top: 0;
+	}
+}
