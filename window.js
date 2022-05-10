@@ -61,10 +61,9 @@ for (let i = 0; i < button.length; i++) {
 }
 if (button) {
 	window.addEventListener('keydown', function (e) {
-		// ==========================================================chose language
 		if (e.key == 'Shift' && altL.classList.contains('active')) {
 			const ru = document.querySelectorAll(".rus")
-			const en = document.querySelectorAll(".en")
+			const en = this.document.querySelectorAll(".en")
 			ru.forEach(elen => {
 				elen.classList.toggle('ru')
 			})
@@ -81,13 +80,14 @@ if (button) {
 					!button[i].classList.contains('shift_right') &&
 					!button[i].classList.contains('alt') &&
 					!button[i].classList.contains('tab_key')) {
-					//===================================== LOWER OR UPPERCASE
-					if (shiftL.classList.contains('active') || shiftR.classList.contains('active')
-						|| caps_Lock.classList.contains('active_caps')) {
-						textInput.innerHTML += button[i].innerText.toUpperCase()
+					if (!shiftL.classList.contains('active') && !shiftR.classList.contains('active')
+						&& !caps_Lock.classList.contains('active_caps')) {
+						textInput.innerHTML += button[i].innerText.toLowerCase()
+					} else if (capslock.classList.contains('active_caps') && shiftL.classList.contains('active')) {
+						textInput.innerHTML += button[i].innerHTML.toLowerCase()
 					}
 					else {
-						textInput.innerHTML += button[i].innerText.toLowerCase()
+						textInput.innerHTML += button[i].innerText.toUpperCase()
 					}
 				}
 			}
