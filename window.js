@@ -64,7 +64,7 @@ if (button) {
 		// ==========================================================chose language
 		if (e.key == 'Shift' && altL.classList.contains('active')) {
 			const ru = document.querySelectorAll(".rus")
-			const en = this.document.querySelectorAll(".en")
+			const en = document.querySelectorAll(".en")
 			ru.forEach(elen => {
 				elen.classList.toggle('ru')
 			})
