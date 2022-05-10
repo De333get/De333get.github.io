@@ -135,15 +135,17 @@ let keys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0',
 	'O', 'P', '[', ']', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K',
 	'L', ';', '\'', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', ',', '.', '/']
 
-let keysRU = ['Й', 'Ц', 'У', 'К', 'Е', 'Н', 'Г', 'Ш',
+let keysRU = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0',
+	'-', '=', 'Й', 'Ц', 'У', 'К', 'Е', 'Н', 'Г', 'Ш',
 	'Щ', 'З', 'Х', 'Ъ', 'Ф', 'Ы', 'В', 'А', 'П', 'Р', 'О', 'Л',
 	'Д', 'Ж', 'Э', 'Я', 'Ч', 'С', 'М', 'И', 'Т', 'Ь', 'Б', 'Ю', '.']
-for (let i = 0; i < keys.length; i++) {
+for (let i = 0; i < keysRU.length; i++) {
 	if (i < 12) {
 		let key = document.createElement('div')
 		row1.append(key)
 		key.className = 'keys'
 		key.classList.add('ru')
+		key.classList.add('rus')
 		key.innerHTML = keysRU[i]
 	}
 	if (i >= 12 && i < 24) {
@@ -151,6 +153,7 @@ for (let i = 0; i < keys.length; i++) {
 		row2.append(key)
 		key.className = 'keys'
 		key.classList.add('ru')
+		key.classList.add('rus')
 		key.innerHTML = keysRU[i]
 	}
 	if (i >= 24 && i < 35) {
@@ -158,6 +161,7 @@ for (let i = 0; i < keys.length; i++) {
 		row3.append(key)
 		key.className = 'keys'
 		key.classList.add('ru')
+		key.classList.add('rus')
 		key.innerHTML = keysRU[i]
 	}
 	if (i >= 35 && i < 46) {
@@ -165,6 +169,7 @@ for (let i = 0; i < keys.length; i++) {
 		row4.append(key)
 		key.className = 'keys'
 		key.classList.add('ru')
+		key.classList.add('rus')
 		key.innerHTML = keysRU[i]
 	}
 }
@@ -174,24 +179,28 @@ for (let i = 0; i < keys.length; i++) {
 		let key = document.createElement('div')
 		row1.append(key)
 		key.className = 'keys'
+		key.classList.add('en')
 		key.innerHTML = keys[i]
 	}
 	if (i >= 12 && i < 24) {
 		let key = document.createElement('div')
 		row2.append(key)
 		key.className = 'keys'
+		key.classList.add('en')
 		key.innerHTML = keys[i]
 	}
 	if (i >= 24 && i < 35) {
 		let key = document.createElement('div')
 		row3.append(key)
 		key.className = 'keys'
+		key.classList.add('en')
 		key.innerHTML = keys[i]
 	}
 	if (i >= 35 && i < 46) {
 		let key = document.createElement('div')
 		row4.append(key)
 		key.className = 'keys'
+		key.classList.add('en')
 		key.innerHTML = keys[i]
 	}
 }

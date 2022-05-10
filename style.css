@@ -172,23 +172,10 @@ body{
 	height: 28px;
 	box-shadow: 1px 1px 4px black;
 }
-.en{
-	position: absolute;
-	top: 12px;
-	left: 12px;
-	font-size: 16px;
-	display: inline-flex;
-}
-
 .ru{
 display: none;
 }
-.num{
-	position: absolute;
-	bottom: 8px;
-	left: 8px;
-	font-size: 18px;
-}
+
 .symbol{
 	position: absolute;
 	top: 8px;
@@ -233,7 +220,7 @@ display: none;
 }
 
 .remove{
-	animation: keys_animation 0.5s forwards;
+	animation: keys_animation .5s forwards;
 }
 @keyframes keys_animation {
 	0%{
