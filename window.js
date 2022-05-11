@@ -8,6 +8,9 @@ if (button && textInput && KeyPad) {
 			if (this.classList.contains('capslock_key')) {
 				this.classList.toggle('active_caps')
 				capsLockMode ? capsLockMode = false : capsLockMode = true
+			}
+			else if (shiftL.classList.contains('active')) {
+				textInput.innerHTML += this.innerHTML.toUpperCase()
 			} else if (this.classList.contains('backspace_key')) {
 				let str = textInput.innerHTML
 				textInput.innerHTML = str.substring(0, (str.length - 1))
@@ -61,7 +64,7 @@ for (let i = 0; i < button.length; i++) {
 }
 if (button) {
 	window.addEventListener('keydown', function (e) {
-		if (e.key == 'Shift' && altL.classList.contains('active')) {
+		if (e.key == 'Shift' && altL.classList.contains('active') || e.key == 'Alt' && shiftL.classList.contains('active')) {
 			const ru = document.querySelectorAll(".rus")
 			const en = this.document.querySelectorAll(".en")
 			ru.forEach(elen => {
