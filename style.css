@@ -175,7 +175,9 @@ body{
 .ru{
 display: none;
 }
-
+.numdisactive{
+	display: none;
+}
 .symbol{
 	position: absolute;
 	top: 8px;
