@@ -46,7 +46,7 @@ const spaceKey = document.querySelector('.space_key'),
 	shiftR = document.querySelector('.shift_right'),
 	caps_Lock = document.querySelector('.capslock_key'),
 	altR = document.querySelector('.alt_right'),
-	altL = document.querySelector('.alt_left'),
+	altL = document.querySelector('.alt'),
 	arrowL = document.querySelector('.left_arr'),
 	arrowR = document.querySelector('.right_arr'),
 	arrowUp = document.querySelector('.up'),
@@ -61,6 +61,16 @@ for (let i = 0; i < button.length; i++) {
 }
 if (button) {
 	window.addEventListener('keydown', function (e) {
+		if (e.key == 'Shift' && altL.classList.contains('active')) {
+			const ru = document.querySelectorAll(".rus")
+			const en = this.document.querySelectorAll(".en")
+			ru.forEach(elen => {
+				elen.classList.toggle('ru')
+			})
+			en.forEach(elen => {
+				elen.classList.toggle('ru')
+			})
+		}
 		for (let i = 0; i < button.length; i++) {
 			if (e.key == button[i].getAttribute('keyname') || e.key == button[i].getAttribute('lowerCaseName')) {
 				button[i].classList.add('active')
@@ -69,20 +79,17 @@ if (button) {
 					!button[i].classList.contains('shift_left') &&
 					!button[i].classList.contains('shift_right') &&
 					!button[i].classList.contains('alt') &&
-					!button[i].classList.contains('tab_key'))
+					!button[i].classList.contains('tab_key')) {
 					if (!shiftL.classList.contains('active') && !shiftR.classList.contains('active')
 						&& !caps_Lock.classList.contains('active_caps')) {
 						textInput.innerHTML += button[i].innerText.toLowerCase()
-					} else if (caps_Lock.classList.contains('active_caps') &&
-						shiftL.classList.contains('active')) {
-						textInput.innerHTML += button[i].innerText.toLowerCase()
-					} else if ((caps_Lock.classList.contains('active_caps') &&
-						shiftR.classList.contains('active'))) {
-						textInput.innerHTML += button[i].innerText.toLowerCase()
+					} else if (capslock.classList.contains('active_caps') && shiftL.classList.contains('active')) {
+						textInput.innerHTML += button[i].innerHTML.toLowerCase()
 					}
 					else {
 						textInput.innerHTML += button[i].innerText.toUpperCase()
 					}
+				}
 			}
 			e.preventDefault()
 		}
@@ -93,6 +100,7 @@ if (button) {
 			meta.classList.add('active')
 		}
 		if (e.code == 'ArrowLeft') {
+
 			arrowL.classList.add('active')
 			textInput.innerHTML += "&larr;"
 		}
@@ -288,12 +296,15 @@ if (button) {
 			}
 			if (e.code == 'MetaLeft') {
 				meta.classList.remove('active')
+				meta.classList.add('remove')
 			}
 			if (e.code == 'ArrowRight') {
 				arrowR.classList.remove('active')
+				arrowR.classList.add('remove')
 			}
 			if (e.code == 'ArrowLeft') {
 				arrowL.classList.remove('active')
+				arrowL.classList.add('remove')
 			}
 			if (e.code == 'ArrowUp') {
 				arrowUp.classList.remove('up_active')
@@ -324,6 +335,7 @@ if (button) {
 				spaceKey.classList.add('remove')
 			}
 			if (e.code == 'ShiftLeft') {
+				shiftL.classList.add('remove')
 				shiftR.classList.remove('active')
 				shiftR.classList.remove('remove')
 			}
