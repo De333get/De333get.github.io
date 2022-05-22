@@ -127,7 +127,27 @@ leftRight.classList.add('right_arr')
 leftRight.innerHTML = '&rarr;'
 
 
-
+let symbol = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+']
+for (let i = 0; i < symbol.length; i++) {
+	let key = document.createElement('div')
+	row1.append(key)
+	key.className = 'keys'
+	key.classList.add('en')
+	key.classList.add('num')
+	key.classList.add('numdisactive')
+	key.innerHTML = symbol[i]
+}
+let symbolRU = ['!', '"', '№', ';', '%', ':', '?', '*', '(', ')', '_', '+']
+for (let i = 0; i < symbol.length; i++) {
+	let key = document.createElement('div')
+	row1.append(key)
+	key.className = 'keys'
+	key.classList.add('rus')
+	key.classList.add('num')
+	key.classList.add('ru')
+	key.classList.add('numdisactive')
+	key.innerHTML = symbolRU[i]
+}
 
 
 let keys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0',
@@ -146,6 +166,7 @@ for (let i = 0; i < keysRU.length; i++) {
 		key.className = 'keys'
 		key.classList.add('ru')
 		key.classList.add('rus')
+		key.classList.add('num')
 		key.innerHTML = keysRU[i]
 	}
 	if (i >= 12 && i < 24) {
@@ -180,6 +201,7 @@ for (let i = 0; i < keys.length; i++) {
 		row1.append(key)
 		key.className = 'keys'
 		key.classList.add('en')
+		key.classList.add('num')
 		key.innerHTML = keys[i]
 	}
 	if (i >= 12 && i < 24) {

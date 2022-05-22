@@ -61,6 +61,13 @@ for (let i = 0; i < button.length; i++) {
 }
 if (button) {
 	window.addEventListener('keydown', function (e) {
+		if (e.key == 'Shift') {
+			const num = document.querySelectorAll('.num')
+			num.forEach(el => {
+				el.classList.toggle('numdisactive')
+			})
+		}
+
 		if (e.key == 'Shift' && altL.classList.contains('active')) {
 			const ru = document.querySelectorAll(".rus")
 			const en = this.document.querySelectorAll(".en")
@@ -83,7 +90,7 @@ if (button) {
 					if (!shiftL.classList.contains('active') && !shiftR.classList.contains('active')
 						&& !caps_Lock.classList.contains('active_caps')) {
 						textInput.innerHTML += button[i].innerText.toLowerCase()
-					} else if (capslock.classList.contains('active_caps') && shiftL.classList.contains('active')) {
+					} else if (caps_Lock.classList.contains('active_caps') && shiftL.classList.contains('active')) {
 						textInput.innerHTML += button[i].innerHTML.toLowerCase()
 					}
 					else {
@@ -105,45 +112,7 @@ if (button) {
 			textInput.innerHTML += "&larr;"
 		}
 		/*=======================shift Left======= */
-		if (shiftL.classList.contains('active') && e.code == 'Equal') {
-			textInput.innerHTML += '+'
-		}
-		if (shiftL.classList.contains('active') && e.code == 'Minus') {
-			textInput.innerHTML += '_'
-		}
-		if (shiftL.classList.contains('active') && e.code == 'Backquote') {
-			textInput.innerHTML += '~'
-		}
-		if (shiftL.classList.contains('active') && e.code == 'Digit0') {
-			textInput.innerHTML += ')'
-		}
-		if (shiftL.classList.contains('active') && e.code == 'Digit9') {
-			textInput.innerHTML += '('
-		}
-		if (shiftL.classList.contains('active') && e.code == 'Digit8') {
-			textInput.innerHTML += '*'
-		}
-		if (shiftL.classList.contains('active') && e.code == 'Digit7') {
-			textInput.innerHTML += '&'
-		}
-		if (shiftL.classList.contains('active') && e.code == 'Digit6') {
-			textInput.innerHTML += '^'
-		}
-		if (shiftL.classList.contains('active') && e.code == 'Digit5') {
-			textInput.innerHTML += '%'
-		}
-		if (shiftL.classList.contains('active') && e.code == 'Digit4') {
-			textInput.innerHTML += '$'
-		}
-		if (shiftL.classList.contains('active') && e.code == 'Digit3') {
-			textInput.innerHTML += '#'
-		}
-		if (shiftL.classList.contains('active') && e.code == 'Digit2') {
-			textInput.innerHTML += '@'
-		}
-		if (shiftL.classList.contains('active') && e.code == 'Digit1') {
-			textInput.innerHTML += '!'
-		}
+
 		if (shiftL.classList.contains('active') && e.code == 'BracketLeft') {
 			textInput.innerHTML += '{'
 		}
@@ -169,45 +138,7 @@ if (button) {
 			textInput.innerHTML += '|'
 		}
 		/*=======================shift right======= */
-		if (shiftR.classList.contains('active') && e.code == 'Equal') {
-			textInput.innerHTML += '+'
-		}
-		if (shiftR.classList.contains('active') && e.code == 'Minus') {
-			textInput.innerHTML += '_'
-		}
-		if (shiftR.classList.contains('active') && e.code == 'Backquote') {
-			textInput.innerHTML += '~'
-		}
-		if (shiftR.classList.contains('active') && e.code == 'Digit0') {
-			textInput.innerHTML += ')'
-		}
-		if (shiftR.classList.contains('active') && e.code == 'Digit9') {
-			textInput.innerHTML += '('
-		}
-		if (shiftR.classList.contains('active') && e.code == 'Digit8') {
-			textInput.innerHTML += '*'
-		}
-		if (shiftR.classList.contains('active') && e.code == 'Digit7') {
-			textInput.innerHTML += '&'
-		}
-		if (shiftR.classList.contains('active') && e.code == 'Digit6') {
-			textInput.innerHTML += '^'
-		}
-		if (shiftR.classList.contains('active') && e.code == 'Digit5') {
-			textInput.innerHTML += '%'
-		}
-		if (shiftR.classList.contains('active') && e.code == 'Digit4') {
-			textInput.innerHTML += '$'
-		}
-		if (shiftR.classList.contains('active') && e.code == 'Digit3') {
-			textInput.innerHTML += '#'
-		}
-		if (shiftR.classList.contains('active') && e.code == 'Digit2') {
-			textInput.innerHTML += '@'
-		}
-		if (shiftR.classList.contains('active') && e.code == 'Digit1') {
-			textInput.innerHTML += '!'
-		}
+
 		if (shiftR.classList.contains('active') && e.code == 'BracketLeft') {
 			textInput.innerHTML += '{'
 		}
@@ -289,6 +220,13 @@ if (button) {
 		}
 	})
 	window.addEventListener('keyup', function (e) {
+		if (e.key == 'Shift') {
+			const num = document.querySelectorAll('.num')
+			num.forEach(el => {
+				el.classList.toggle('numdisactive')
+			})
+		}
+
 		for (let i = 0; i < button.length; i++) {
 			if (e.key == button[i].getAttribute('keyname') || e.key == button[i].getAttribute('lowerCaseName')) {
 				button[i].classList.remove('active')
